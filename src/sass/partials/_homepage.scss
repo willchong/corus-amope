@@ -1,0 +1,24 @@
+.background {
+	background: #eaeaea url('../img/teal-bg.jpg') top center no-repeat;
+}
+
+.main {
+	max-width: 960px;
+	// height: 200px;
+	margin: 0 auto;
+	background: url('../img/teal-bg.jpg') repeat;
+
+	.content {
+		color: #fff;
+	}
+
+	.video {
+		width: 540px;
+		height: 310px;
+		background-color: #000;
+	}
+
+	.social {
+		text-align: center;
+	}
+}
