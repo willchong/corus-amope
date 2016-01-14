@@ -1,7 +1,75 @@
 header {
 	background-color: #fff;
-	height: 160px;
+	min-height: 160px;
+
 	.container {
 		max-width: 960px;
+
+		.top-logo {
+
+			.amope {
+				display: inline-block;
+				margin-top: 20px;
+				margin-left: 90px;
+				margin-right: 50px;
+			}
+			.pedi-perfect {
+				display: inline-block;
+				margin-top: 20px;
+				margin-right: 75px;
+			}
+			.product {
+				position: absolute;
+				margin-top: -30px;
+			}
+		}
+
 	}
+
+	@include breakpoint(medium) {
+
+		.container {
+			.top-logo {
+				.amope {
+					margin-left: 0px;
+				}
+			}
+		}
+		
+	}
+
+	@include breakpoint(small) {
+		min-height: auto;
+
+		.container {
+
+			.top-logo {
+				text-align: center;
+				margin-left: -150px;
+
+				.amope {
+					display: inline-block;
+					margin-top: 20px;
+					margin-left: 20px;
+					margin-right: 20px;
+					margin-bottom: 20px;
+					width: 160px;
+				}
+				.pedi-perfect {
+					display: inline-block;
+					margin-top: 20px;
+					margin-right: 20px;
+					width: 75px;
+				}
+				.product {
+					position: absolute;
+					margin-top: -10px;
+					width: 150px;
+				}
+			}
+
+		}
+	}
+
 }
+

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var changed = require('gulp-changed');
 var watch = require('gulp-watch');
+var gulpCopy = require('gulp-copy');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
@@ -76,7 +77,12 @@ gulp.task('extend', function () {
     // gulp.src('src/pages/*.html')
     //     .pipe(extender({annotations:false,verbose:false}))
     //     .pipe(gulp.dest('dist/pages/'));
-})
+});
+
+gulp.task('fonts', function () {
+    return gulp.src('*', { cwd: 'src/fonts' })
+        .pipe(gulpCopy('dist/fonts'));
+});
 
 gulp.task('imagemin', function () {
     return gulp.src(['src/img/*','src/img/*/*'])
@@ -93,6 +99,7 @@ gulp.task('watch', function() {
     gulp.watch('src/**/*.html', ['extend']);
     gulp.watch('src/img/*.*', ['imagemin']);
     gulp.watch('src/js/*.js', ['scripts']);
+    gulp.watch('src/fonts', ['fonts']);    
 });
 
 gulp.task('flatten', function() {
@@ -101,5 +108,5 @@ gulp.task('flatten', function() {
 	  .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', ['imagemin', 'sass', 'scripts', 'extend', 'watch']);
+gulp.task('default', ['imagemin', 'sass', 'scripts', 'extend', 'fonts', 'watch']);
 gulp.task('build', ['imagemin', 'html-replace', 'sass', 'scripts']);

@@ -1,0 +1,14 @@
+$yellow: #ffd413;
+$teal: #0097aa;
+$white: #fff;
+
+$small: 750px;
+
+ @mixin breakpoint($point) {
+  @if $point == small {
+     @media (max-width: 768px)  { @content ; }
+  }
+  @if $point == medium {
+     @media (max-width: 991px)  { @content ; }
+  }
+}
