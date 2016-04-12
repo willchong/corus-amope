@@ -1,8 +1,8 @@
 .background {
-	background: #eaeaea url('../img/teal-bg.jpg') center center no-repeat;
+	background: #00accd url('../img/graphic-bg.jpg') top center no-repeat;
 
-	@include breakpoint(medium) {
-		background: $teal;
+	@include breakpoint(small) {
+		// background: #fff;
 	}
 }
 
@@ -15,6 +15,11 @@
 	.content {
 		color: #fff;
 		text-align: center;
+		margin-top: 380px;
+
+		.shift-left {
+			margin-left: -70px;
+		}
 
 		h1 {
 			font-family: "Champagne-Limousines-Bold", Arial, sans-serif;
@@ -32,11 +37,12 @@
 		}
 
 		p {
-			font-family: Georgia, "Times New Roman", serif;
-			font-size: 16px;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
 			line-height: 1.3;
-			color: #fff;
-			max-width: 360px;
+			color: #00939f;
+			max-width: 420px;
+			margin-top: 10px;
 			margin-bottom: 20px;
 
 			&.emphasis {
@@ -49,7 +55,8 @@
 	.video {
 		margin-top: 100px;
 		position:relative;
-		padding-bottom:56.25%;
+		padding-bottom:50%;
+		// padding-bottom:56.25%;
 		padding-top:30px;
 		height:0;
 		overflow:hidden;
@@ -132,37 +139,51 @@
 		text-align: center;
 		ul {
 			list-style: none;
-			margin-top: 20px;
+			margin-top: 10px;
 			padding: 0;
 			li {
 				display: inline-block;
 				margin: 0 6px;
 				vertical-align: top;
 				&.arrow-text {
-					background: url('../img/follow-bg.png') no-repeat;
+					background: url('../img/follow-bg-new.png') no-repeat;
 					width: 259px;
 					height: 41px;
 					font-size: 28px;
 					font-family: "Champagne-Limousines-Bold", Arial, sans-serif;
-					color: $yellow;
+					color: #fff;
 					text-transform: uppercase;
 				}
 			}
 		}
-		.legal {
-			font-family: Georgia, "Times New Roman", serif;
-			font-size: 16px;
-			color: #fff;
+
+	}
+
+	.store {
+		text-align: center;
+		img {
+			margin-left: -100px;
 		}
+	}
+
+	.legal {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 16px;
+		color: #fff;
+		text-align: center;
+		margin-bottom: 0;
 	}
 
 	@include breakpoint(small) {
 	
-		background-color: $teal;
+		// background-color: $teal;
 
 		.content {
 			p {
 				max-width: 100%;
+			}
+			.shift-left {
+				margin-left: 0;
 			}
 		}
 		
