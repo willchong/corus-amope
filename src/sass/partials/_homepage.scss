@@ -3,6 +3,7 @@
 
 	@include breakpoint(small) {
 		// background: #fff;
+		background-position-x: 20%;
 	}
 }
 
@@ -12,13 +13,35 @@
 	// background-color: $teal;
 	margin: 0 auto;
 
+	.features {
+		text-align: center;
+		padding-top: 20px;
+	}
+
 	.content {
 		color: #fff;
-		text-align: center;
-		margin-top: 380px;
+		text-align: center;	
+		margin-top: 300px;
 
 		.shift-left {
 			margin-left: -70px;
+			img {
+				width: 100%;
+				@include breakpoint(small) {
+					width: auto;
+				}
+				@include breakpoint(xsmall) {
+					width: 100%;
+				}
+			}
+			@include breakpoint(medium) {
+				margin-left: 0;
+				p {
+					br {
+						display: none;
+					}
+				}
+			}
 		}
 
 		h1 {
@@ -53,7 +76,7 @@
 	}
 
 	.video {
-		margin-top: 100px;
+		margin-top: 50px;
 		position:relative;
 		padding-bottom:50%;
 		// padding-bottom:56.25%;
@@ -156,6 +179,12 @@
 				}
 			}
 		}
+		@include breakpoint(small) {
+			.arrow-text {
+				display: block;
+				margin: 0 auto 12px;
+			}
+		}
 
 	}
 
@@ -163,6 +192,12 @@
 		text-align: center;
 		img {
 			margin-left: -100px;
+			@include breakpoint(small) {
+				margin-left: 0px;
+			}
+		}
+		@include breakpoint(small) {
+			margin: 12px 0;
 		}
 	}
 
